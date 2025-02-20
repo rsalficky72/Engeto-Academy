@@ -1,3 +1,31 @@
+Úvod
+Tento projekt se zaměřuje na analýzu dostupnosti základních potravin v České republice a porovnání s dalšími evropskými státy. Naším cílem je vytvořit robustní datový podklad, který umožní odpovědět na klíčové výzkumné otázky týkající se vývoje mezd, cen potravin a vlivu makroekonomických ukazatelů (např. HDP a GINI koeficient) na životní úroveň občanů.
+
+Cíle projektu
+Analýza mezd a cen: Prozkoumat, zda mzdy rostou ve všech odvětvích, nebo se v některých případech snižují.
+Dostupnost potravin: Vyhodnotit, kolik litrů mléka a kilogramů chleba je možné zakoupit v prvním a posledním srovnatelném období dostupných dat.
+Rychlost zdražování: Identifikovat potravinové kategorie, u kterých je meziroční nárůst cen nejnižší.
+Ekonomický vliv: Zjistit, zda výraznější růst HDP v daném roce koreluje s rychlejším růstem mezd a cen potravin.
+Použité datové sady
+Primární tabulky:
+
+czechia_payroll – Data o mzdách v různých odvětvích za několik let.
+czechia_payroll_calculation, czechia_payroll_industry_branch, czechia_payroll_unit, czechia_payroll_value_type – Číselníky související s mzdovými daty.
+czechia_price – Data o cenách vybraných potravin.
+czechia_price_category – Číselník kategorií potravin.
+Sdílené a dodatečné tabulky:
+
+czechia_region a czechia_district – Číselníky regionů a okresů České republiky.
+countries – Informace o zemích (např. hlavní město, měna, národní jídlo).
+economies – Makroekonomické ukazatele jako HDP, GINI koeficient a další.
+Výstupy projektu
+Výsledkem práce jsou dvě hlavní tabulky, ze kterých lze získat data potřebná pro odpovědi na výzkumné otázky:
+
+Primární tabulka: t_{jmeno}_{prijmeni}_project_SQL_primary_final – Konsolidovaná data o mzdách a cenách potravin pro Českou republiku (sjednocená na srovnatelná období).
+Sekundární tabulka: t_{jmeno}_{prijmeni}_project_SQL_secondary_final – Dodatečná data o HDP, GINI a populaci pro další evropské státy.
+Kromě těchto tabulek obsahuje repozitář také sadu SQL skriptů, které generují potřebné datové přehledy a umožňují odpovědět na definované výzkumné otázky. Tyto otázky mohou výsledky podporovat nebo vyvracet – záleží na tom, co ukazují analyzovaná data.
+
+Postup:
 Vytvoření tabulky
 CREATE TABLE t_Rudolf_Salficky_project_SQL_primary_final AS 
 WITH avg_salaries AS (
